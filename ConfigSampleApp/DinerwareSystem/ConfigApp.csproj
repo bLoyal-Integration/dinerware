@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{840755A4-D776-403C-A711-D259A7A7FBE9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConfigApp</RootNamespace>
+    <AssemblyName>Brain Config App</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bLoyal_.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="bLoyal, Version=1.0.4.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\bLoyal.1.0.4.7\lib\net452\bLoyal.dll</HintPath>
+    </Reference>
+    <Reference Include="bLoyal.Connectors.Grid, Version=1.0.4.48, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\bLoyal.Connectors.Grid.1.0.4.48\lib\net452\bLoyal.Connectors.Grid.dll</HintPath>
+    </Reference>
+    <Reference Include="bLoyal.LoyaltyEngine, Version=1.0.4.21, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\bLoyal.LoyaltyEngine.1.0.4.21\lib\net452\bLoyal.LoyaltyEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Dinerware.AddInBase, Version=3.5.0.0, Culture=neutral, PublicKeyToken=8cd593f74d67c0eb, processorArchitecture=x86">
+      <HintPath>..\..\V1.0\DataSyncService\packages\bLoyal.DinerwareBrain.3.7.4.4068\lib\net45\Dinerware.AddInBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Dinerware.Common, Version=3.5.0.0, Culture=neutral, PublicKeyToken=8cd593f74d67c0eb, processorArchitecture=x86">
+      <HintPath>..\..\V1.0\DataSyncService\packages\bLoyal.DinerwareBrain.3.7.4.4068\lib\net45\Dinerware.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Dinerware.Controls, Version=3.5.0.0, Culture=neutral, PublicKeyToken=8cd593f74d67c0eb, processorArchitecture=x86">
+      <HintPath>..\..\V1.0\DataSyncService\packages\bLoyal.DinerwareBrain.3.7.4.4068\lib\net45\Dinerware.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Dinerware.Objects, Version=3.5.0.0, Culture=neutral, PublicKeyToken=8cd593f74d67c0eb, processorArchitecture=x86">
+      <HintPath>..\..\V1.0\DataSyncService\packages\bLoyal.DinerwareBrain.3.7.4.4068\lib\net45\Dinerware.Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Administration.7.0.0.0\lib\net20\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CloseWindowWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CloseWindowWarning.Designer.cs">
+      <DependentUpon>CloseWindowWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDisableEnablebLoyalFunctionality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisableEnablebLoyalFunctionality.Designer.cs">
+      <DependentUpon>frmDisableEnablebLoyalFunctionality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisableEnablebLoyalMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisableEnablebLoyalMsg.Designer.cs">
+      <DependentUpon>frmDisableEnablebLoyalMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGetbLoyalServiceURLs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGetbLoyalServiceURLs.Designer.cs">
+      <DependentUpon>frmGetbLoyalServiceURLs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelp.Designer.cs">
+      <DependentUpon>frmHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLastSyncResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLastSyncResult.Designer.cs">
+      <DependentUpon>frmLastSyncResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServerOfflineWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServerOfflineWarning.Designer.cs">
+      <DependentUpon>frmServerOfflineWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWarningMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWarningMessage.Designer.cs">
+      <DependentUpon>frmWarningMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateAccessKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateAccessKey.Designer.cs">
+      <DependentUpon>GenerateAccessKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ConfigurationHelper.cs" />
+    <Compile Include="Helpers\ConnectorVersion.cs" />
+    <Compile Include="Helpers\CryptoGraphy.cs" />
+    <Compile Include="Helpers\XMLHelper.cs" />
+    <Compile Include="LoggerHelper.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\DinerwareDBHelper.cs" />
+    <Compile Include="Helpers\Keys.cs" />
+    <Compile Include="Interface\IDinerwareInterface.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\AsyncHelpers.cs" />
+    <Compile Include="Provider\DinerwareProvider.cs" />
+    <Compile Include="Provider\GridServiceProvider.cs" />
+    <Compile Include="Provider\LoyaltyEngineWebService.cs" />
+    <Compile Include="Provider\PaymentEngineConnector.cs" />
+    <Compile Include="Service References\DinerwareEngineService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PaymentEngine\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ShowWarningMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowWarningMessage.Designer.cs">
+      <DependentUpon>ShowWarningMessage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CloseWindowWarning.resx">
+      <DependentUpon>CloseWindowWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDisableEnablebLoyalFunctionality.resx">
+      <DependentUpon>frmDisableEnablebLoyalFunctionality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfiguration.resx">
+      <DependentUpon>frmConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDisableEnablebLoyalMsg.resx">
+      <DependentUpon>frmDisableEnablebLoyalMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGetbLoyalServiceURLs.resx">
+      <DependentUpon>frmGetbLoyalServiceURLs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelp.resx">
+      <DependentUpon>frmHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLastSyncResult.resx">
+      <DependentUpon>frmLastSyncResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServerOfflineWarning.resx">
+      <DependentUpon>frmServerOfflineWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWarningMessage.resx">
+      <DependentUpon>frmWarningMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateAccessKey.resx">
+      <DependentUpon>GenerateAccessKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ShowWarningMessage.resx">
+      <DependentUpon>ShowWarningMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app_old.config" />
+    <None Include="app_.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Dinerware.Choice.datasource" />
+    <None Include="Properties\DataSources\Dinerware.ChoiceCategory.datasource" />
+    <None Include="Properties\DataSources\Dinerware.Course.datasource" />
+    <None Include="Properties\DataSources\Dinerware.CourseGroup.datasource" />
+    <None Include="Properties\DataSources\Dinerware.Discount.datasource" />
+    <None Include="Properties\DataSources\Dinerware.DiscountSet.datasource" />
+    <None Include="Properties\DataSources\Dinerware.DwProperty.datasource" />
+    <None Include="Properties\DataSources\Dinerware.ExtendedData.datasource" />
+    <None Include="Properties\DataSources\Dinerware.ItemGroup.datasource" />
+    <None Include="Properties\DataSources\Dinerware.Job.datasource" />
+    <None Include="Properties\DataSources\Dinerware.LocationStatusInfo.datasource" />
+    <None Include="Properties\DataSources\Dinerware.MenuItem.datasource" />
+    <None Include="Properties\DataSources\Dinerware.Person.datasource" />
+    <None Include="Properties\DataSources\Dinerware.postalLookupResponse.datasource" />
+    <None Include="Properties\DataSources\Dinerware.PrintQueueSettings.datasource" />
+    <None Include="Properties\DataSources\Dinerware.Security.datasource" />
+    <None Include="Properties\DataSources\Dinerware.SecurityTemplate.datasource" />
+    <None Include="Properties\DataSources\Dinerware.Tax.datasource" />
+    <None Include="Properties\DataSources\Dinerware.TenderType.datasource" />
+    <None Include="Properties\DataSources\Dinerware.Ticket.datasource" />
+    <None Include="Properties\DataSources\Dinerware.TicketList.datasource" />
+    <None Include="Properties\DataSources\Dinerware.TicketReopenLog.datasource" />
+    <None Include="Properties\DataSources\Dinerware.TicketStatusInfo.datasource" />
+    <None Include="Properties\DataSources\Dinerware.User.datasource" />
+    <None Include="Properties\DataSources\Dinerware.VoidReason.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.AreaSetCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.CashDrawerTransactionCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.CashDrawerTransactionDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.CashReconciliation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.CategoryCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.CategorySetCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.ChoiceCategoryCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.ChoiceCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.DataProviderDescriptionCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.DOLOGetMenuResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.DwPropertyBaseCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.dw_export_auto_gratuitiesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.dw_export_financial_discountsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.dw_export_financial_gross_salesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.dw_export_financial_taxesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.dw_export_financial_transactionsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.FinancialTenderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.FullMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.JobCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.KeyPairCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.LoggableEventCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.LoggableEventDefinitionCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.MenuItemCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.MessageCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.PaymentCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.PreferenceCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.PrintQueueSettingsCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.ReceiptsInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.RestaurantInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.RevenueCenterCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.RevenueClassCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.ShiftCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.SimpleScreenCategorySet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TableAreaCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TableAreaList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TableCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TaxCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TenderTypeCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TicketCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TicketDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TicketItemVoidDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TicketStatusCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TransactionDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.TrialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.UserCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsCardTransaction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsCardTransactionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsChoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsChoiceCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsCommitPendingTicketWithCardResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsCustomerDefault.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsCustomerResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsDatabaseConnectionInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsDiscount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsDiscountAddResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsDiscountRemoveResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsDwProperty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsDwPropertySubcategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsEditResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsEnrollMembershipResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsLicense.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsLicenseFeature.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsMembership.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsMembershipProvider.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsMenuItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsPerson.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsPrefs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsPrintJob.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsTicket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsTicketChangeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsTicketItemVoid.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsTrialTicket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\ConfigApp.DinerwareEngineService.wsUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareEngineService\VirtualClient.wsdl" />
+    <None Include="Service References\PaymentEngine\ConfigApp.PaymentEngine.CardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentEngine\PaymentEngine.wsdl" />
+    <None Include="Service References\PaymentEngine\PaymentEngine.xsd" />
+    <None Include="Service References\PaymentEngine\PaymentEngine1.xsd" />
+    <None Include="Service References\PaymentEngine\PaymentEngine2.xsd" />
+    <None Include="Service References\PaymentEngine\PaymentEngine3.xsd" />
+    <None Include="Service References\PaymentEngine\PaymentEngineService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DinerwareEngineService\" />
+    <WCFMetadataStorage Include="Service References\PaymentEngine\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DinerwareEngineService\VirtualClient.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DinerwareEngineService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DinerwareEngineService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DinerwareEngineService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bLoyal_.ico" />
+    <Content Include="bLoyal_logo.ico" />
+    <Content Include="DinerwareConfigurationFile.xml" />
+    <None Include="Service References\PaymentEngine\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PaymentEngine\configuration.svcinfo" />
+    <None Include="Service References\PaymentEngine\configuration91.svcinfo" />
+    <None Include="Service References\PaymentEngine\PaymentEngine.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

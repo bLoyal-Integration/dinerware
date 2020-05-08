@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04A3A615-F65E-4588-801E-43817D668C00}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DinerwareAPIServices</RootNamespace>
+    <AssemblyName>DinerwareAPIServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\DinerwareServiceHelper.cs" />
+    <Compile Include="Interface\IDinerwareInterface.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\DinerwareProvider.cs" />
+    <Compile Include="Service References\DinerwareServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.AddCardTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.AreaSetCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.CashDrawerTransactionCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.CashDrawerTransactionDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.CashReconciliation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.CategoryCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.CategorySetCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.Choice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.ChoiceCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.ChoiceCategoryCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.ChoiceCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.CommitPendingTicketWithCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.Course.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.CourseGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.DataProviderDescriptionCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.Discount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.DiscountSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.DOLOGetMenuResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.DwProperty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.DwPropertyBaseCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.dw_export_auto_gratuitiesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.dw_export_financial_discountsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.dw_export_financial_gross_salesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.dw_export_financial_taxesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.dw_export_financial_transactionsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.ExtendedData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.FinancialTenderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.FullMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.ItemGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.Job.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.JobCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.KeyPairCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.LocationStatusInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.LoggableEventCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.LoggableEventDefinitionCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.MenuItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.MenuItemCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.MessageCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.PaymentCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.postalLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.PreferenceCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.PrintQueueSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.PrintQueueSettingsCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.ReceiptsInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.RestaurantInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.RevenueCenterCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.RevenueClassCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.Security.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.SecurityTemplate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.ShiftCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.SimpleScreenCategorySet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TableAreaCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TableAreaList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TableCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.Tax.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TaxCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TenderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TenderTypeCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.Ticket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TicketCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TicketDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TicketItemVoidDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TicketList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TicketReopenLog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TicketStatusCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TicketStatusInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TransactionDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.TrialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.UpdateCustomerAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.UserCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.VoidReason.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsCardTransaction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsCardTransactionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsChoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsChoiceCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsCommitPendingTicketWithCardResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsCustomerDefault.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsCustomerResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsDatabaseConnectionInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsDiscount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsDiscountAddResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsDiscountRemoveResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsDwProperty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsDwPropertySubcategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsEditResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsEnrollMembershipResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsLicense.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsLicenseFeature.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsMembership.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsMembershipProvider.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsMenuItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsPerson.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsPrefs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsPrintJob.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsTicket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsTicketChangeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsTicketItemVoid.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsTrialTicket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\DinerwareAPIServices.DinerwareServiceReference.wsUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DinerwareServiceReference\VirtualClient.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DinerwareServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DinerwareServiceReference\VirtualClient.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DinerwareServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DinerwareServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DinerwareServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

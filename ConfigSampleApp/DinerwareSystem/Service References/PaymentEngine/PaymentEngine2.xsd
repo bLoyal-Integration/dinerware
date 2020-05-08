@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schema.bloyal.com/3.5" elementFormDefault="qualified" targetNamespace="http://schema.bloyal.com/3.5" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wsazuretest.bloyal.com/WS35/PaymentEngine.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://wsazuretest.bloyal.com/WS35/PaymentEngine.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.ServiceModel" />
+  <xs:complexType name="CardBalanceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardPin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerUid" type="ser:guid" />
+      <xs:element minOccurs="0" name="Swiped" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TenderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionExternalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardBalanceRequest" nillable="true" type="tns:CardBalanceRequest" />
+  <xs:complexType name="CardResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthorizationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvailableBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrentBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:CardRequestStatus" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardResponse" nillable="true" type="tns:CardResponse" />
+  <xs:simpleType name="CardRequestStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Approved" />
+      <xs:enumeration value="Declined" />
+      <xs:enumeration value="Invalid" />
+      <xs:enumeration value="Bypass" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CardRequestStatus" nillable="true" type="tns:CardRequestStatus" />
+  <xs:complexType name="SecurityFault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecurityFault" nillable="true" type="tns:SecurityFault" />
+  <xs:complexType name="BaseFault">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.ServiceModel" minOccurs="0" name="Exception" nillable="true" type="q1:ExceptionDetail" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseFault" nillable="true" type="tns:BaseFault" />
+  <xs:complexType name="RedirectFault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RedirectBaseUri" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RedirectFault" nillable="true" type="tns:RedirectFault" />
+  <xs:complexType name="SystemFault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SystemFault" nillable="true" type="tns:SystemFault" />
+  <xs:complexType name="BusinessFault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BusinessFault" nillable="true" type="tns:BusinessFault" />
+  <xs:complexType name="CardCreditRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowDuplicate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerUid" type="ser:guid" />
+      <xs:element minOccurs="0" name="Swiped" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TenderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionExternalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardCreditRequest" nillable="true" type="tns:CardCreditRequest" />
+  <xs:complexType name="CardRedeemRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowDuplicate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardPin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerUid" type="ser:guid" />
+      <xs:element minOccurs="0" name="Swiped" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TenderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionExternalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardRedeemRequest" nillable="true" type="tns:CardRedeemRequest" />
+  <xs:complexType name="CardDebitRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowDuplicate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionExternalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardDebitRequest" nillable="true" type="tns:CardDebitRequest" />
+  <xs:complexType name="CardRefundRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowDuplicate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionExternalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardRefundRequest" nillable="true" type="tns:CardRefundRequest" />
+  <xs:complexType name="CardAuthorizeRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowDuplicate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardPin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerUid" type="ser:guid" />
+      <xs:element minOccurs="0" name="Swiped" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TenderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionExternalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardAuthorizeRequest" nillable="true" type="tns:CardAuthorizeRequest" />
+  <xs:complexType name="CardReleaseRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardReleaseRequest" nillable="true" type="tns:CardReleaseRequest" />
+  <xs:complexType name="CardCaptureRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowDuplicate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionExternalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardCaptureRequest" nillable="true" type="tns:CardCaptureRequest" />
+</xs:schema>

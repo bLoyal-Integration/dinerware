@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service.bloyal.com/3.5" elementFormDefault="qualified" targetNamespace="http://service.bloyal.com/3.5" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wsazuretest.bloyal.com/WS35/PaymentEngine.svc?xsd=xsd2" namespace="http://schema.bloyal.com/3.5" />
+  <xs:element name="GetCardBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceAccessKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="storeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deviceCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schema.bloyal.com/3.5" minOccurs="0" name="request" nillable="true" type="q1:CardBalanceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schema.bloyal.com/3.5" minOccurs="0" name="GetCardBalanceResult" nillable="true" type="q2:CardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardCredit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceAccessKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="storeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deviceCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schema.bloyal.com/3.5" minOccurs="0" name="request" nillable="true" type="q3:CardCreditRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardCreditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schema.bloyal.com/3.5" minOccurs="0" name="CardCreditResult" nillable="true" type="q4:CardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardRedeem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceAccessKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="storeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deviceCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schema.bloyal.com/3.5" minOccurs="0" name="request" nillable="true" type="q5:CardRedeemRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardRedeemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schema.bloyal.com/3.5" minOccurs="0" name="CardRedeemResult" nillable="true" type="q6:CardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardDebit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceAccessKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="storeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deviceCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schema.bloyal.com/3.5" minOccurs="0" name="request" nillable="true" type="q7:CardDebitRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardDebitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schema.bloyal.com/3.5" minOccurs="0" name="CardDebitResult" nillable="true" type="q8:CardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardRefund">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceAccessKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="storeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deviceCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schema.bloyal.com/3.5" minOccurs="0" name="request" nillable="true" type="q9:CardRefundRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardRefundResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schema.bloyal.com/3.5" minOccurs="0" name="CardRefundResult" nillable="true" type="q10:CardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardAuthorize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceAccessKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="storeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deviceCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schema.bloyal.com/3.5" minOccurs="0" name="request" nillable="true" type="q11:CardAuthorizeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardAuthorizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schema.bloyal.com/3.5" minOccurs="0" name="CardAuthorizeResult" nillable="true" type="q12:CardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardRelease">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceAccessKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="storeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deviceCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schema.bloyal.com/3.5" minOccurs="0" name="request" nillable="true" type="q13:CardReleaseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardReleaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schema.bloyal.com/3.5" minOccurs="0" name="CardReleaseResult" nillable="true" type="q14:CardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardCapture">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceAccessKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="storeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deviceCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schema.bloyal.com/3.5" minOccurs="0" name="request" nillable="true" type="q15:CardCaptureRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardCaptureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schema.bloyal.com/3.5" minOccurs="0" name="CardCaptureResult" nillable="true" type="q16:CardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
